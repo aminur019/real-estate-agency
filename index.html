@@ -1,0 +1,2908 @@
+<html lang="it">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Valutazione Immobiliare Professionale | La Tua Casa, La Tua Storia
+  </title>
+  <meta content="Ottieni una valutazione gratuita e senza impegno della tua casa. Affidati a professionisti che comprendono il vero valore della tua proprietà." name="description"/>
+  <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="site.webmanifest" rel="manifest"/>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script>
+   tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#9333ea',
+                        accent: '#f59e0b',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   .navbar {
+            transition: all 0.3s ease;
+        }
+        .navbar.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+        .hero-image {
+            position: relative;
+            min-height: 100vh;
+            padding-top: 4rem;
+        }
+        .hero-image img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .hero-image::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .team-member:hover img {
+            transform: scale(1.05);
+        }
+        .timeline-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -50px;
+            height: 50px;
+            width: 2px;
+            background-color: #e5e7eb;
+        }
+        @media (max-width: 768px) {
+            .timeline-item:not(:last-child):after {
+                left: 30px;
+                bottom: -30px;
+            }
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+        }
+        /* Hide top bar on scroll */
+        .top-bar {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            will-change: transform, opacity;
+        }
+        .top-bar.hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+  </style>
+  <script>
+        // Right-click নিষ্ক্রিয় করতে
+        document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+        // কীবোর্ড শর্টকাট নিষ্ক্রিয় করতে
+        document.addEventListener('keydown', (event) => {
+            if (
+                (event.ctrlKey && event.key === 's') || // Ctrl+S
+                (event.ctrlKey && event.key === 'u') || // Ctrl+U
+                (event.ctrlKey && event.key === 'c') || // Ctrl+C
+                (event.key === 'F12')                  // F12
+            ) {
+                event.preventDefault();
+                alert("This action is disabled on this website.");
+            }
+        });
+
+        // Address bar থেকে লিংক কপি প্রতিরোধ (Referrer কে হ্যান্ডল করা)
+        window.onload = () => {
+            if (window.location !== window.parent.location) {
+                window.parent.location = window.location;
+            }
+        };
+    </script>
+ </head>
+ <body class="font-sans text-gray-800">
+  <!-- Header -->
+  <header class="fixed w-full z-50 top-0">
+   <!-- Top Bar -->
+   <div class="top-bar bg-primary text-white py-2 px-4 text-sm">
+    <div class="container mx-auto flex justify-between items-center">
+     <div class="flex items-center space-x-4">
+      <span>
+       <i class="fas fa-phone-alt mr-1">
+       </i>
+       +39 02 1234567
+      </span>
+      <span>
+       <i class="fas fa-envelope mr-1">
+       </i>
+       info@casavalore.it
+      </span>
+     </div>
+     <div class="flex items-center space-x-4">
+      <a class="hover:text-accent transition" href="#">
+       <i class="fab fa-facebook-f">
+       </i>
+      </a>
+      <a class="hover:text-accent transition" href="#">
+       <i class="fab fa-instagram">
+       </i>
+      </a>
+      <a class="hover:text-accent transition" href="#">
+       <i class="fab fa-linkedin-in">
+       </i>
+      </a>
+     </div>
+    </div>
+   </div>
+   <!-- Main Navigation -->
+   <nav class="navbar bg-white py-4 px-4">
+    <div class="container mx-auto flex justify-between items-center">
+     <!-- Logo -->
+     <div class="flex items-center">
+      <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl mr-3">
+       <i class="fas fa-home">
+       </i>
+      </div>
+      <span class="text-xl font-bold text-primary">
+       CasaValore
+      </span>
+     </div>
+     <!-- Desktop Menu -->
+     <div class="hidden md:flex items-center space-x-8">
+      <a class="text-gray-800 hover:text-primary font-medium transition" href="#home">
+       Home
+      </a>
+      <a class="text-gray-800 hover:text-primary font-medium transition" href="#valuation">
+       Valutazione
+      </a>
+      <a class="text-gray-800 hover:text-primary font-medium transition" href="#services">
+       Servizi
+      </a>
+      <a class="text-gray-800 hover:text-primary font-medium transition" href="#properties">
+       Immobili
+      </a>
+      <a class="text-gray-800 hover:text-primary font-medium transition" href="#team">
+       Team
+      </a>
+      <a class="text-gray-800 hover:text-primary font-medium transition" href="#testimonials">
+       Recensioni
+      </a>
+      <a class="text-gray-800 hover:text-primary font-medium transition" href="#contact">
+       Contatti
+      </a>
+      <button class="bg-primary hover:bg-blue-800 text-white font-medium py-2 px-6 rounded-full transition-all transform hover:scale-105 shadow-lg">
+       Richiedi Valutazione
+      </button>
+     </div>
+     <!-- Mobile Menu Button -->
+     <button class="md:hidden text-gray-800 focus:outline-none" id="mobile-menu-button">
+      <i class="fas fa-bars text-2xl">
+      </i>
+     </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu md:hidden bg-white" id="mobile-menu">
+     <div class="container mx-auto px-4 pt-2 pb-4 space-y-3">
+      <a class="block py-2 text-gray-800 hover:text-primary" href="#home">
+       Home
+      </a>
+      <a class="block py-2 text-gray-800 hover:text-primary" href="#valuation">
+       Valutazione
+      </a>
+      <a class="block py-2 text-gray-800 hover:text-primary" href="#services">
+       Servizi
+      </a>
+      <a class="block py-2 text-gray-800 hover:text-primary" href="#properties">
+       Immobili
+      </a>
+      <a class="block py-2 text-gray-800 hover:text-primary" href="#team">
+       Team
+      </a>
+      <a class="block py-2 text-gray-800 hover:text-primary" href="#testimonials">
+       Recensioni
+      </a>
+      <a class="block py-2 text-gray-800 hover:text-primary" href="#contact">
+       Contatti
+      </a>
+      <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 px-6 rounded-full transition-all transform hover:scale-105 shadow-lg mt-2">
+       Richiedi Valutazione
+      </button>
+     </div>
+    </div>
+   </nav>
+  </header>
+  <!-- Hero Section -->
+  <section class="hero-image flex items-center pt-16 relative">
+   <img alt="Modern Italian house exterior with a swimming pool and well-maintained garden under a clear blue sky" height="1080" src="https://storage.googleapis.com/a1aa/image/9d4e8974-b391-4859-04cf-72d9262fc15f.jpg" width="1920"/>
+   <div class="container mx-auto px-4 py-20 text-white relative z-10 w-full max-w-4xl">
+    <div data-aos="fade-up" data-aos-duration="800">
+     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+      La tua casa racconta la tua storia,
+      <br/>
+      siamo qui per ascoltarla.
+     </h1>
+     <p class="text-xl md:text-2xl mb-8 max-w-2xl">
+      Affidati a chi conosce il valore della tua casa, non solo il suo prezzo.
+     </p>
+     <button class="bg-accent hover:bg-yellow-600 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-xl" id="cta-hero">
+      Richiedi una Valutazione Gratuita
+      <i class="fas fa-arrow-right ml-2">
+      </i>
+     </button>
+    </div>
+   </div>
+  </section>
+  <!-- Valuation Types Section -->
+  <section class="py-20 bg-gray-50" id="valuation">
+   <div class="container mx-auto px-4">
+    <div class="text-center mb-16" data-aos="fade-up">
+     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">
+      Come preferisci valutare la tua casa?
+     </h2>
+     <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      Scegli il metodo più adatto alle tue esigenze.
+     </p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+     <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" data-aos="fade-right" data-aos-delay="200">
+      <div class="p-8">
+       <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6 text-primary">
+        <i class="fas fa-user-tie text-2xl">
+        </i>
+       </div>
+       <h3 class="text-2xl font-bold mb-4 text-primary">
+        Valutazione in Presenza
+       </h3>
+       <p class="text-gray-600 mb-6">
+        Un nostro esperto visiterà la tua casa per una valutazione accurata e personalizzata, considerando ogni dettaglio.
+       </p>
+       <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-[1.02]" data-modal-target="#in-person-modal">
+        Richiedi Valutazione in Presenza
+       </button>
+      </div>
+     </div>
+     <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" data-aos="fade-left" data-aos-delay="200">
+      <div class="p-8">
+       <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mb-6 text-secondary">
+        <i class="fas fa-laptop-house text-2xl">
+        </i>
+       </div>
+       <h3 class="text-2xl font-bold mb-4 text-secondary">
+        Valutazione Online
+       </h3>
+       <p class="text-gray-600 mb-6">
+        Ottieni una stima preliminare comodamente da casa tua in pochi minuti, compilando il nostro semplice questionario.
+       </p>
+       <button class="w-full bg-secondary hover:bg-purple-800 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-[1.02]" data-modal-target="#online-modal">
+        Ottieni Valutazione Online
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Agency Presentation -->
+  <section class="py-20 bg-white" id="team">
+   <div class="container mx-auto px-4">
+    <div class="flex flex-col lg:flex-row items-center">
+     <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10 aos-init aos-animate" data-aos="fade-right">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">
+       La nostra storia
+      </h2>
+      <p class="text-gray-600 mb-6 text-lg">
+       Fondata nel 2010, CasaValore nasce dalla passione per l'architettura e il design, combinata con una profonda conoscenza del mercato immobiliare.
+      </p>
+      <p class="text-gray-600 mb-6 text-lg">
+       Crediamo che ogni casa abbia una storia unica da raccontare e un valore che va oltre i semplici metri quadrati.
+      </p>
+      <p class="text-gray-600 text-lg">
+       Il nostro team di esperti è dedicato a fornire valutazioni accurate e servizi personalizzati che mettono al centro le esigenze dei nostri clienti.
+      </p>
+     </div>
+     <div class="lg:w-1/2 bg-gray-50 flex justify-center items-center ">
+  <div class=" relative object-center max-w-xl w-full">
+    <div class="h-[400px] overflow-hidden rounded-xl shadow-lg">
+      <img alt="Team CasaValore group photo in modern office with diverse professionals smiling and collaborating" class="w-full h-full object-center object-cover" height="600" src="https://storage.googleapis.com/a1aa/image/8151cede-193d-4056-66c9-e095b4ce6a0c.jpg" width="800">
+    </div>
+    <div class="absolute -bottom-6 -left-6 bg-accent w-24 h-24 rounded-xl flex items-center justify-center text-white text-4xl shadow-xl">
+      <i class="fas fa-award"></i>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="mt-20 aos-init aos-animate" data-aos="fade-up">
+     <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-primary">
+      Il nostro team
+     </h2>
+     <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div class="team-member bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
+       <div class="overflow-hidden">
+        <img alt="Portrait of Marco Bianchi CEO in business attire, smiling confidently" class="w-full h-64 object-cover transition-transform duration-500" height="400" src="https://storage.googleapis.com/a1aa/image/c857e5dd-8f89-4562-d852-293679f5846e.jpg" width="400">
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-bold mb-1">
+         Marco Bianchi
+        </h3>
+        <p class="text-gray-500 mb-3">
+         Fondatore &amp; CEO
+        </p>
+        <p class="text-gray-600 text-sm">
+         15+ anni di esperienza nel settore immobiliare
+        </p>
+       </div>
+      </div>
+      <div class="team-member bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
+       <div class="overflow-hidden">
+        <img alt="Portrait of Laura Rossi valuation specialist in office, professional and approachable" class="w-full h-64 object-cover transition-transform duration-500" height="400" src="https://storage.googleapis.com/a1aa/image/82392e40-46a6-4d52-8b31-2c8f755ee5ea.jpg" width="400">
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-bold mb-1">
+         Laura Rossi
+        </h3>
+        <p class="text-gray-500 mb-3">
+         Responsabile Valutazioni
+        </p>
+        <p class="text-gray-600 text-sm">
+         Specializzata in immobili storici e di pregio
+        </p>
+       </div>
+      </div>
+      <div class="team-member bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
+       <div class="overflow-hidden">
+        <img alt="Portrait of Anna Verdi marketing expert with camera, creative and friendly" class="w-full h-64 object-cover transition-transform duration-500" height="400" src="https://storage.googleapis.com/a1aa/image/6e5299f3-5c6b-480e-45b9-8c1735055e55.jpg" width="400">
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-bold mb-1">
+         Anna Verdi
+        </h3>
+        <p class="text-gray-500 mb-3">
+         Esperta di Marketing Immobiliare
+        </p>
+        <p class="text-gray-600 text-sm">
+         Home staging e fotografia professionale
+        </p>
+       </div>
+      </div>
+      <div class="team-member bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl">
+       <div class="overflow-hidden">
+        <img alt="Portrait of Luigi Neri financial consultant in office, professional and trustworthy" class="w-full h-64 object-cover transition-transform duration-500" height="400" src="https://storage.googleapis.com/a1aa/image/a78e6529-4738-4aff-88c9-57ed37c8b20e.jpg" width="400">
+       </div>
+       <div class="p-6">
+        <h3 class="text-xl font-bold mb-1">
+         Luigi Neri
+        </h3>
+        <p class="text-gray-500 mb-3">
+         Consulente Finanziario
+        </p>
+        <p class="text-gray-600 text-sm">
+         Esperto in mutui e soluzioni di finanziamento
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Services Section -->
+  <section class="py-20 bg-gray-50" id="services">
+   <div class="container mx-auto px-4">
+    <div class="text-center mb-16" data-aos="fade-up">
+     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">
+      I nostri servizi
+     </h2>
+     <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      Una gamma completa di servizi per accompagnarti in ogni fase della vendita.
+     </p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+     <div class="service-card bg-white rounded-xl p-8 shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+      <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6 text-primary">
+       <i class="fas fa-search-dollar text-2xl">
+       </i>
+      </div>
+      <h3 class="text-xl font-bold mb-3">
+       Valutazione gratuita
+      </h3>
+      <p class="text-gray-600">
+       Una valutazione accurata e senza impegno del tuo immobile, condotta dai nostri esperti.
+      </p>
+     </div>
+     <div class="service-card bg-white rounded-xl p-8 shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+      <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6 text-primary">
+       <i class="fas fa-file-contract text-2xl">
+       </i>
+      </div>
+      <h3 class="text-xl font-bold mb-3">
+       Verifica documentale
+      </h3>
+      <p class="text-gray-600">
+       Controllo completo della documentazione con tecnico e notaio per garantire la regolarità.
+      </p>
+     </div>
+     <div class="service-card bg-white rounded-xl p-8 shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+      <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6 text-primary">
+       <i class="fas fa-camera text-2xl">
+       </i>
+      </div>
+      <h3 class="text-xl font-bold mb-3">
+       Home staging
+      </h3>
+      <p class="text-gray-600">
+       Servizio fotografico professionale e consulenza per presentare al meglio il tuo immobile.
+      </p>
+     </div>
+     <div class="service-card bg-white rounded-xl p-8 shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+      <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6 text-primary">
+       <i class="fas fa-hand-holding-usd text-2xl">
+       </i>
+      </div>
+      <h3 class="text-xl font-bold mb-3">
+       Consulenza finanziaria
+      </h3>
+      <p class="text-gray-600">
+       Supporto nella ricerca della soluzione di mutuo più adatta alle tue esigenze.
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-primary text-white" id="testimonials">
+   <div class="container mx-auto px-4">
+    <div class="text-center mb-16" data-aos="fade-up">
+     <h2 class="text-3xl md:text-4xl font-bold mb-4">
+      Cosa dicono i nostri clienti
+     </h2>
+     <p class="text-xl text-primary-200 max-w-2xl mx-auto">
+      Le esperienze di chi ha scelto CasaValore per vendere la propria casa.
+     </p>
+    </div>
+    <div class="testimonial-slider relative">
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white bg-opacity-10 rounded-xl p-8 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="100">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+         <img alt="Portrait of Maria S., a satisfied female client with short dark hair smiling" class="w-full h-full object-cover" height="100" src="https://storage.googleapis.com/a1aa/image/cd3ef106-c438-42b7-55a9-5498105f2233.jpg" width="100"/>
+        </div>
+        <div>
+         <h4 class="font-bold">
+          Maria S.
+         </h4>
+         <div class="flex text-yellow-300">
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+         </div>
+        </div>
+       </div>
+       <p>
+        "Ho apprezzato la professionalità e la sensibilità con cui hanno valutato la casa dove ho vissuto per 30 anni. Hanno capito perfettamente il valore emotivo oltre che economico."
+       </p>
+      </div>
+      <div class="bg-white bg-opacity-10 rounded-xl p-8 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="200">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+         <img alt="Portrait of Giovanni R., a happy male client with glasses and beard" class="w-full h-full object-cover" height="100" src="https://storage.googleapis.com/a1aa/image/460f0f2d-38b2-4f64-1963-b4fd76214e9a.jpg" width="100"/>
+        </div>
+        <div>
+         <h4 class="font-bold">
+          Giovanni R.
+         </h4>
+         <div class="flex text-yellow-300">
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+         </div>
+        </div>
+       </div>
+       <p>
+        "La valutazione online è stata precisa e la successiva visita ha confermato l'accuratezza della stima. Venduta in 3 settimane al prezzo giusto!"
+       </p>
+      </div>
+      <div class="bg-white bg-opacity-10 rounded-xl p-8 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="300">
+       <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+         <img alt="Portrait of Elena and Paolo B., a couple smiling happily" class="w-full h-full object-cover" height="100" src="https://storage.googleapis.com/a1aa/image/829df3bd-c36c-4c25-f334-037c2dfa4569.jpg" width="100"/>
+        </div>
+        <div>
+         <h4 class="font-bold">
+          Elena e Paolo B.
+         </h4>
+         <div class="flex text-yellow-300">
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star">
+          </i>
+          <i class="fas fa-star-half-alt">
+          </i>
+         </div>
+        </div>
+       </div>
+       <p>
+        "Il servizio di home staging ha fatto la differenza! Le foto professionali hanno attirato molti più potenziali acquirenti e abbiamo ottenuto un'offerta superiore alle aspettative."
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Featured Properties Section -->
+  <section class="py-20 bg-white" id="properties">
+   <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">
+      In Vetrina
+     </h2>
+     <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      Le nostre migliori proprietà selezionate per te
+     </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+     <!-- Property 1 -->
+     <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer">
+      <div class="relative">
+       <img alt="Villa moderna a Milano, esterno elegante con piscina e giardino curato" class="w-full h-48 object-cover" height="320" src="https://storage.googleapis.com/a1aa/image/4b96a153-cc3f-49ba-f09f-0adc818f820a.jpg" width="600"/>
+       <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+        Vendita
+       </div>
+       <div class="absolute bottom-4 left-4 bg-white text-primary px-3 py-1 rounded-full text-sm font-medium">
+        €850,000
+       </div>
+      </div>
+      <div class="p-5">
+       <h3 class="text-xl font-bold mb-2">
+        Villa Moderna
+       </h3>
+       <p class="text-gray-600 mb-3 flex items-center">
+        <i class="fas fa-map-marker-alt text-primary mr-2">
+        </i>
+        Milano, Italia
+       </p>
+       <div class="flex justify-between border-b border-gray-200 pb-3 mb-3 text-sm">
+        <div class="flex items-center">
+         <i class="fas fa-bed text-primary mr-2">
+         </i>
+         4 Camere
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-bath text-primary mr-2">
+         </i>
+         3 Bagni
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-ruler-combined text-primary mr-2">
+         </i>
+         220 m²
+        </div>
+       </div>
+       <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 text-sm">
+        Dettagli
+       </button>
+      </div>
+     </div>
+     <!-- Property 2 -->
+     <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer">
+      <div class="relative">
+       <img alt="Appartamento di lusso a Roma, interno moderno con ampie finestre e vista città" class="w-full h-48 object-cover" height="320" src="https://storage.googleapis.com/a1aa/image/dbb3f539-5c46-4694-8547-2667f9a7fa49.jpg" width="600"/>
+       <div class="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">
+        Affitto
+       </div>
+       <div class="absolute bottom-4 left-4 bg-white text-primary px-3 py-1 rounded-full text-sm font-medium">
+        €3,200/m
+       </div>
+      </div>
+      <div class="p-5">
+       <h3 class="text-xl font-bold mb-2">
+        Appartamento di Lusso
+       </h3>
+       <p class="text-gray-600 mb-3 flex items-center">
+        <i class="fas fa-map-marker-alt text-primary mr-2">
+        </i>
+        Roma, Italia
+       </p>
+       <div class="flex justify-between border-b border-gray-200 pb-3 mb-3 text-sm">
+        <div class="flex items-center">
+         <i class="fas fa-bed text-primary mr-2">
+         </i>
+         3 Camere
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-bath text-primary mr-2">
+         </i>
+         2 Bagni
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-ruler-combined text-primary mr-2">
+         </i>
+         150 m²
+        </div>
+       </div>
+       <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 text-sm">
+        Dettagli
+       </button>
+      </div>
+     </div>
+     <!-- Property 3 -->
+     <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer">
+      <div class="relative">
+       <img alt="Casa rustica in Toscana, esterno in pietra con vigna e paesaggio collinare" class="w-full h-48 object-cover" height="320" src="https://storage.googleapis.com/a1aa/image/423c84ae-5d8a-430f-87ea-b9b4928a41d6.jpg" width="600"/>
+       <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+        Vendita
+       </div>
+       <div class="absolute bottom-4 left-4 bg-white text-primary px-3 py-1 rounded-full text-sm font-medium">
+        €620,000
+       </div>
+      </div>
+      <div class="p-5">
+       <h3 class="text-xl font-bold mb-2">
+        Casa Rustica
+       </h3>
+       <p class="text-gray-600 mb-3 flex items-center">
+        <i class="fas fa-map-marker-alt text-primary mr-2">
+        </i>
+        Toscana, Italia
+       </p>
+       <div class="flex justify-between border-b border-gray-200 pb-3 mb-3 text-sm">
+        <div class="flex items-center">
+         <i class="fas fa-bed text-primary mr-2">
+         </i>
+         5 Camere
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-bath text-primary mr-2">
+         </i>
+         3 Bagni
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-ruler-combined text-primary mr-2">
+         </i>
+         350 m²
+        </div>
+       </div>
+       <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 text-sm">
+        Dettagli
+       </button>
+      </div>
+     </div>
+     <!-- Property 4 -->
+     <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer">
+      <div class="relative">
+       <img alt="Penthouse a Venezia con vista sul canale, terrazza ampia e arredamento moderno" class="w-full h-48 object-cover" height="320" src="https://storage.googleapis.com/a1aa/image/cddef327-17a7-4522-d45f-064d4478157e.jpg" width="600"/>
+       <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+        Vendita
+       </div>
+       <div class="absolute bottom-4 left-4 bg-white text-primary px-3 py-1 rounded-full text-sm font-medium">
+        €1,200,000
+       </div>
+      </div>
+      <div class="p-5">
+       <h3 class="text-xl font-bold mb-2">
+        Penthouse Vista Canale
+       </h3>
+       <p class="text-gray-600 mb-3 flex items-center">
+        <i class="fas fa-map-marker-alt text-primary mr-2">
+        </i>
+        Venezia, Italia
+       </p>
+       <div class="flex justify-between border-b border-gray-200 pb-3 mb-3 text-sm">
+        <div class="flex items-center">
+         <i class="fas fa-bed text-primary mr-2">
+         </i>
+         4 Camere
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-bath text-primary mr-2">
+         </i>
+         3 Bagni
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-ruler-combined text-primary mr-2">
+         </i>
+         280 m²
+        </div>
+       </div>
+       <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 text-sm">
+        Dettagli
+       </button>
+      </div>
+     </div>
+     <!-- Property 5 -->
+     <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer">
+      <div class="relative">
+       <img alt="Appartamento in centro a Firenze, interno elegante con mobili classici e vista su piazza" class="w-full h-48 object-cover" height="320" src="https://storage.googleapis.com/a1aa/image/4c2c4122-d6d2-4217-0949-0baec4582c5a.jpg" width="600"/>
+       <div class="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">
+        Affitto
+       </div>
+       <div class="absolute bottom-4 left-4 bg-white text-primary px-3 py-1 rounded-full text-sm font-medium">
+        €2,500/m
+       </div>
+      </div>
+      <div class="p-5">
+       <h3 class="text-xl font-bold mb-2">
+        Appartamento Storico
+       </h3>
+       <p class="text-gray-600 mb-3 flex items-center">
+        <i class="fas fa-map-marker-alt text-primary mr-2">
+        </i>
+        Firenze, Italia
+       </p>
+       <div class="flex justify-between border-b border-gray-200 pb-3 mb-3 text-sm">
+        <div class="flex items-center">
+         <i class="fas fa-bed text-primary mr-2">
+         </i>
+         3 Camere
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-bath text-primary mr-2">
+         </i>
+         2 Bagni
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-ruler-combined text-primary mr-2">
+         </i>
+         180 m²
+        </div>
+       </div>
+       <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 text-sm">
+        Dettagli
+       </button>
+      </div>
+     </div>
+     <!-- Property 6 -->
+     <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer">
+      <div class="relative">
+       <img alt="Villa sul mare a Napoli, vista panoramica con piscina e giardino mediterraneo" class="w-full h-48 object-cover" height="320" src="https://storage.googleapis.com/a1aa/image/e91cc7f1-0ac3-4f69-f74f-1943b5c99691.jpg" width="600"/>
+       <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+        Vendita
+       </div>
+       <div class="absolute bottom-4 left-4 bg-white text-primary px-3 py-1 rounded-full text-sm font-medium">
+        €1,750,000
+       </div>
+      </div>
+      <div class="p-5">
+       <h3 class="text-xl font-bold mb-2">
+        Villa sul Mare
+       </h3>
+       <p class="text-gray-600 mb-3 flex items-center">
+        <i class="fas fa-map-marker-alt text-primary mr-2">
+        </i>
+        Napoli, Italia
+       </p>
+       <div class="flex justify-between border-b border-gray-200 pb-3 mb-3 text-sm">
+        <div class="flex items-center">
+         <i class="fas fa-bed text-primary mr-2">
+         </i>
+         6 Camere
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-bath text-primary mr-2">
+         </i>
+         4 Bagni
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-ruler-combined text-primary mr-2">
+         </i>
+         420 m²
+        </div>
+       </div>
+       <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 text-sm">
+        Dettagli
+       </button>
+      </div>
+     </div>
+     <!-- Property 7 -->
+     <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer">
+      <div class="relative">
+       <img alt="Casa antica a Verona, esterno con facciata storica e cortile interno" class="w-full h-48 object-cover" height="320" src="https://storage.googleapis.com/a1aa/image/cc7db87d-5ccf-4ef2-8289-a37d42898d95.jpg" width="600"/>
+       <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+        Vendita
+       </div>
+       <div class="absolute bottom-4 left-4 bg-white text-primary px-3 py-1 rounded-full text-sm font-medium">
+        €950,000
+       </div>
+      </div>
+      <div class="p-5">
+       <h3 class="text-xl font-bold mb-2">
+        Casa Antica
+       </h3>
+       <p class="text-gray-600 mb-3 flex items-center">
+        <i class="fas fa-map-marker-alt text-primary mr-2">
+        </i>
+        Verona, Italia
+       </p>
+       <div class="flex justify-between border-b border-gray-200 pb-3 mb-3 text-sm">
+        <div class="flex items-center">
+         <i class="fas fa-bed text-primary mr-2">
+         </i>
+         4 Camere
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-bath text-primary mr-2">
+         </i>
+         3 Bagni
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-ruler-combined text-primary mr-2">
+         </i>
+         320 m²
+        </div>
+       </div>
+       <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 text-sm">
+        Dettagli
+       </button>
+      </div>
+     </div>
+     <!-- Property 8 -->
+     <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer">
+      <div class="relative">
+       <img alt="Appartamento moderno a Torino, interno luminoso con arredamento minimalista" class="w-full h-48 object-cover" height="320" src="https://storage.googleapis.com/a1aa/image/cda3c0ef-5ff6-48fd-2f1a-beb92a7144f1.jpg" width="600"/>
+       <div class="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">
+        Affitto
+       </div>
+       <div class="absolute bottom-4 left-4 bg-white text-primary px-3 py-1 rounded-full text-sm font-medium">
+        €1,800/m
+       </div>
+      </div>
+      <div class="p-5">
+       <h3 class="text-xl font-bold mb-2">
+        Appartamento Moderno
+       </h3>
+       <p class="text-gray-600 mb-3 flex items-center">
+        <i class="fas fa-map-marker-alt text-primary mr-2">
+        </i>
+        Torino, Italia
+       </p>
+       <div class="flex justify-between border-b border-gray-200 pb-3 mb-3 text-sm">
+        <div class="flex items-center">
+         <i class="fas fa-bed text-primary mr-2">
+         </i>
+         2 Camere
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-bath text-primary mr-2">
+         </i>
+         1 Bagno
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-ruler-combined text-primary mr-2">
+         </i>
+         90 m²
+        </div>
+       </div>
+       <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 text-sm">
+        Dettagli
+       </button>
+      </div>
+     </div>
+     <!-- Property 9 -->
+     <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer">
+      <div class="relative">
+       <img alt="Villa in montagna a Brescia, esterno con vista panoramica e boschi circostanti" class="w-full h-48 object-cover" height="320" src="https://storage.googleapis.com/a1aa/image/b75976fe-c2c9-42a3-f1ad-ef2eb9a3ecb7.jpg" width="600"/>
+       <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+        Vendita
+       </div>
+       <div class="absolute bottom-4 left-4 bg-white text-primary px-3 py-1 rounded-full text-sm font-medium">
+        €1,100,000
+       </div>
+      </div>
+      <div class="p-5">
+       <h3 class="text-xl font-bold mb-2">
+        Villa Montana
+       </h3>
+       <p class="text-gray-600 mb-3 flex items-center">
+        <i class="fas fa-map-marker-alt text-primary mr-2">
+        </i>
+        Brescia, Italia
+       </p>
+       <div class="flex justify-between border-b border-gray-200 pb-3 mb-3 text-sm">
+        <div class="flex items-center">
+         <i class="fas fa-bed text-primary mr-2">
+         </i>
+         5 Camere
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-bath text-primary mr-2">
+         </i>
+         3 Bagni
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-ruler-combined text-primary mr-2">
+         </i>
+         380 m²
+        </div>
+       </div>
+       <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 text-sm">
+        Dettagli
+       </button>
+      </div>
+     </div>
+     <!-- Property 10 -->
+     <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer">
+      <div class="relative">
+       <img alt="Appartamento nuovo a Bologna, interno moderno con cucina a vista e balcone" class="w-full h-48 object-cover" height="320" src="https://storage.googleapis.com/a1aa/image/a01a192e-51d9-4bb0-c0ee-4ae9082ca7c8.jpg" width="600"/>
+       <div class="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">
+        Affitto
+       </div>
+       <div class="absolute bottom-4 left-4 bg-white text-primary px-3 py-1 rounded-full text-sm font-medium">
+        €2,100/m
+       </div>
+      </div>
+      <div class="p-5">
+       <h3 class="text-xl font-bold mb-2">
+        Appartamento Nuovo
+       </h3>
+       <p class="text-gray-600 mb-3 flex items-center">
+        <i class="fas fa-map-marker-alt text-primary mr-2">
+        </i>
+        Bologna, Italia
+       </p>
+       <div class="flex justify-between border-b border-gray-200 pb-3 mb-3 text-sm">
+        <div class="flex items-center">
+         <i class="fas fa-bed text-primary mr-2">
+         </i>
+         3 Camere
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-bath text-primary mr-2">
+         </i>
+         2 Bagni
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-ruler-combined text-primary mr-2">
+         </i>
+         160 m²
+        </div>
+       </div>
+       <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 text-sm">
+        Dettagli
+       </button>
+      </div>
+     </div>
+     <!-- Property 11 -->
+     <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer">
+      <div class="relative">
+       <img alt="Villa classica a Genova, esterno elegante con giardino e piscina" class="w-full h-48 object-cover" height="320" src="https://storage.googleapis.com/a1aa/image/a6f82d44-286a-4939-1dbb-dd19ace249d1.jpg" width="600"/>
+       <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+        Vendita
+       </div>
+       <div class="absolute bottom-4 left-4 bg-white text-primary px-3 py-1 rounded-full text-sm font-medium">
+        €2,300,000
+       </div>
+      </div>
+      <div class="p-5">
+       <h3 class="text-xl font-bold mb-2">
+        Villa Classica
+       </h3>
+       <p class="text-gray-600 mb-3 flex items-center">
+        <i class="fas fa-map-marker-alt text-primary mr-2">
+        </i>
+        Genova, Italia
+       </p>
+       <div class="flex justify-between border-b border-gray-200 pb-3 mb-3 text-sm">
+        <div class="flex items-center">
+         <i class="fas fa-bed text-primary mr-2">
+         </i>
+         7 Camere
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-bath text-primary mr-2">
+         </i>
+         5 Bagni
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-ruler-combined text-primary mr-2">
+         </i>
+         550 m²
+        </div>
+       </div>
+       <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 text-sm">
+        Dettagli
+       </button>
+      </div>
+     </div>
+     <!-- Property 12 -->
+     <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer">
+      <div class="relative">
+       <img alt="Casa in periferia a Parma, esterno con giardino e vialetto alberato" class="w-full h-48 object-cover" height="320" src="https://storage.googleapis.com/a1aa/image/e4ca5f76-50fd-4405-183e-c1a728601535.jpg" width="600"/>
+       <div class="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">
+        Affitto
+       </div>
+       <div class="absolute bottom-4 left-4 bg-white text-primary px-3 py-1 rounded-full text-sm font-medium">
+        €1,900/m
+       </div>
+      </div>
+      <div class="p-5">
+       <h3 class="text-xl font-bold mb-2">
+        Casa in Periferia
+       </h3>
+       <p class="text-gray-600 mb-3 flex items-center">
+        <i class="fas fa-map-marker-alt text-primary mr-2">
+        </i>
+        Parma, Italia
+       </p>
+       <div class="flex justify-between border-b border-gray-200 pb-3 mb-3 text-sm">
+        <div class="flex items-center">
+         <i class="fas fa-bed text-primary mr-2">
+         </i>
+         4 Camere
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-bath text-primary mr-2">
+         </i>
+         2 Bagni
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-ruler-combined text-primary mr-2">
+         </i>
+         210 m²
+        </div>
+       </div>
+       <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 text-sm">
+        Dettagli
+       </button>
+      </div>
+     </div>
+     <!-- Property 13 -->
+     <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer">
+      <div class="relative">
+       <img alt="Villa sul mare ad Ancona, esterno con piscina a sfioro e vista mare" class="w-full h-48 object-cover" height="320" src="https://storage.googleapis.com/a1aa/image/c855a45c-1a0b-4653-b5fa-55675a83671b.jpg" width="600"/>
+       <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+        Vendita
+       </div>
+       <div class="absolute bottom-4 left-4 bg-white text-primary px-3 py-1 rounded-full text-sm font-medium">
+        €3,500,000
+       </div>
+      </div>
+      <div class="p-5">
+       <h3 class="text-xl font-bold mb-2">
+        Villa sul Mare
+       </h3>
+       <p class="text-gray-600 mb-3 flex items-center">
+        <i class="fas fa-map-marker-alt text-primary mr-2">
+        </i>
+        Ancona, Italia
+       </p>
+       <div class="flex justify-between border-b border-gray-200 pb-3 mb-3 text-sm">
+        <div class="flex items-center">
+         <i class="fas fa-bed text-primary mr-2">
+         </i>
+         8 Camere
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-bath text-primary mr-2">
+         </i>
+         6 Bagni
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-ruler-combined text-primary mr-2">
+         </i>
+         600 m²
+        </div>
+       </div>
+       <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 text-sm">
+        Dettagli
+       </button>
+      </div>
+     </div>
+     <!-- Property 14 -->
+     <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer">
+      <div class="relative">
+       <img alt="Appartamento in città a Piacenza, interno moderno con balcone e vista urbana" class="w-full h-48 object-cover" height="320" src="https://storage.googleapis.com/a1aa/image/047337a9-93c8-495d-8467-59a4cfdb1666.jpg" width="600"/>
+       <div class="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">
+        Affitto
+       </div>
+       <div class="absolute bottom-4 left-4 bg-white text-primary px-3 py-1 rounded-full text-sm font-medium">
+        €2,800/m
+       </div>
+      </div>
+      <div class="p-5">
+       <h3 class="text-xl font-bold mb-2">
+        Appartamento in Città
+       </h3>
+       <p class="text-gray-600 mb-3 flex items-center">
+        <i class="fas fa-map-marker-alt text-primary mr-2">
+        </i>
+        Piacenza, Italia
+       </p>
+       <div class="flex justify-between border-b border-gray-200 pb-3 mb-3 text-sm">
+        <div class="flex items-center">
+         <i class="fas fa-bed text-primary mr-2">
+         </i>
+         3 Camere
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-bath text-primary mr-2">
+         </i>
+         2 Bagni
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-ruler-combined text-primary mr-2">
+         </i>
+         170 m²
+        </div>
+       </div>
+       <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 text-sm">
+        Dettagli
+       </button>
+      </div>
+     </div>
+     <!-- Property 15 -->
+     <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer">
+      <div class="relative">
+       <img alt="Villa storica a Pisa, esterno con giardino all'italiana e facciata antica" class="w-full h-48 object-cover" height="320" src="https://storage.googleapis.com/a1aa/image/91fb6cb0-1da7-4a78-6094-4a81edccb1dc.jpg" width="600"/>
+       <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+        Vendita
+       </div>
+       <div class="absolute bottom-4 left-4 bg-white text-primary px-3 py-1 rounded-full text-sm font-medium">
+        €4,200,000
+       </div>
+      </div>
+      <div class="p-5">
+       <h3 class="text-xl font-bold mb-2">
+        Villa Storica
+       </h3>
+       <p class="text-gray-600 mb-3 flex items-center">
+        <i class="fas fa-map-marker-alt text-primary mr-2">
+        </i>
+        Pisa, Italia
+       </p>
+       <div class="flex justify-between border-b border-gray-200 pb-3 mb-3 text-sm">
+        <div class="flex items-center">
+         <i class="fas fa-bed text-primary mr-2">
+         </i>
+         10 Camere
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-bath text-primary mr-2">
+         </i>
+         7 Bagni
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-ruler-combined text-primary mr-2">
+         </i>
+         850 m²
+        </div>
+       </div>
+       <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 text-sm">
+        Dettagli
+       </button>
+      </div>
+     </div>
+     <!-- Property 16 -->
+     <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer">
+      <div class="relative">
+       <img alt="Appartamento moderno a Bari, interno luminoso con arredi contemporanei e balcone" class="w-full h-48 object-cover" height="320" src="https://storage.googleapis.com/a1aa/image/48e26928-9074-4e44-11ba-fe6c8855fce9.jpg" width="600"/>
+       <div class="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">
+        Affitto
+       </div>
+       <div class="absolute bottom-4 left-4 bg-white text-primary px-3 py-1 rounded-full text-sm font-medium">
+        €3,500/m
+       </div>
+      </div>
+      <div class="p-5">
+       <h3 class="text-xl font-bold mb-2">
+        Appartamento Moderno
+       </h3>
+       <p class="text-gray-600 mb-3 flex items-center">
+        <i class="fas fa-map-marker-alt text-primary mr-2">
+        </i>
+        Bari, Italia
+       </p>
+       <div class="flex justify-between border-b border-gray-200 pb-3 mb-3 text-sm">
+        <div class="flex items-center">
+         <i class="fas fa-bed text-primary mr-2">
+         </i>
+         3 Camere
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-bath text-primary mr-2">
+         </i>
+         2 Bagni
+        </div>
+        <div class="flex items-center">
+         <i class="fas fa-ruler-combined text-primary mr-2">
+         </i>
+         200 m²
+        </div>
+       </div>
+       <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 text-sm">
+        Dettagli
+       </button>
+      </div>
+     </div>
+    </div>
+    <div class="text-center mt-12">
+     <button class="bg-primary hover:bg-blue-800 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 inline-flex items-center">
+      Vedi Tutte le Proprietà
+      <i class="fas fa-arrow-right ml-2">
+      </i>
+     </button>
+    </div>
+   </div>
+  </section>
+  <!-- Price Comparison -->
+  <section class="py-20 bg-white">
+   <div class="container mx-auto px-4">
+    <div class="text-center mb-16" data-aos="fade-up">
+     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">
+      Andamento dei Prezzi
+     </h2>
+     <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      Confronta i prezzi degli immobili in diversi quartieri
+     </p>
+    </div>
+    <div class="bg-gray-50 rounded-xl p-8 shadow-inner" data-aos="fade-up">
+     <div class="overflow-x-auto">
+      <table class="w-full">
+       <thead>
+        <tr class="border-b border-gray-200">
+         <th class="text-left pb-4 font-semibold text-gray-700">
+          Quartiere
+         </th>
+         <th class="text-right pb-4 font-semibold text-gray-700">
+          Prezzo Medio (€/m²)
+         </th>
+         <th class="text-right pb-4 font-semibold text-gray-700">
+          Variazione 1 Anno
+         </th>
+         <th class="text-right pb-4 font-semibold text-gray-700">
+          Variazione 3 Anni
+         </th>
+         <th class="text-right pb-4 font-semibold text-gray-700">
+          Variazione 5 Anni
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr class="border-b border-gray-200 hover:bg-gray-100 transition-colors duration-200">
+         <td class="py-4 font-medium">
+          Centro Storico
+         </td>
+         <td class="py-4 text-right">
+          8,200
+         </td>
+         <td class="py-4 text-right text-green-600">
+          +5.2%
+         </td>
+         <td class="py-4 text-right text-green-600">
+          +18.7%
+         </td>
+         <td class="py-4 text-right text-green-600">
+          +32.4%
+         </td>
+        </tr>
+        <tr class="border-b border-gray-200 hover:bg-gray-100 transition-colors duration-200">
+         <td class="py-4 font-medium">
+          Zona Finanziaria
+         </td>
+         <td class="py-4 text-right">
+          7,800
+         </td>
+         <td class="py-4 text-right text-green-600">
+          +4.1%
+         </td>
+         <td class="py-4 text-right text-green-600">
+          +15.3%
+         </td>
+         <td class="py-4 text-right text-green-600">
+          +28.9%
+         </td>
+        </tr>
+        <tr class="border-b border-gray-200 hover:bg-gray-100 transition-colors duration-200">
+         <td class="py-4 font-medium">
+          Residenziale Nord
+         </td>
+         <td class="py-4 text-right">
+          6,500
+         </td>
+         <td class="py-4 text-right text-green-600">
+          +3.8%
+         </td>
+         <td class="py-4 text-right text-green-600">
+          +14.2%
+         </td>
+         <td class="py-4 text-right text-green-600">
+          +25.1%
+         </td>
+        </tr>
+        <tr class="border-b border-gray-200 hover:bg-gray-100 transition-colors duration-200">
+         <td class="py-4 font-medium">
+          Zona Universitaria
+         </td>
+         <td class="py-4 text-right">
+          5,900
+         </td>
+         <td class="py-4 text-right text-green-600">
+          +2.9%
+         </td>
+         <td class="py-4 text-right text-green-600">
+          +10.5%
+         </td>
+         <td class="py-4 text-right text-green-600">
+          +20.3%
+         </td>
+        </tr>
+        <tr class="border-b border-gray-200 hover:bg-gray-100 transition-colors duration-200">
+         <td class="py-4 font-medium">
+          Periferia Sud
+         </td>
+         <td class="py-4 text-right">
+          4,300
+         </td>
+         <td class="py-4 text-right text-green-600">
+          +1.5%
+         </td>
+         <td class="py-4 text-right text-green-600">
+          +8.4%
+         </td>
+         <td class="py-4 text-right text-green-600">
+          +15.8%
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="mt-8 text-center" data-aos="fade-up">
+      <p class="text-gray-600 mb-4">
+       Vuoi una stima personalizzata per la tua proprietà?
+      </p>
+      <button class="bg-primary hover:bg-blue-800 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+       Ottieni una Valutazione Gratuita
+      </button>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Property Search -->
+  <section class="py-16 bg-primary text-white">
+   <div class="container mx-auto px-4">
+    <div class="text-center mb-12" data-aos="fade-up">
+     <h2 class="text-3xl md:text-4xl font-bold mb-4">
+      Trova la Casa dei Tuoi Sogni
+     </h2>
+     <p class="text-xl text-primary-200 max-w-2xl mx-auto">
+      Cerca nel nostro ampio database di proprietà
+     </p>
+    </div>
+    <div class="bg-white rounded-xl shadow-xl p-6" data-aos="fade-up">
+     <form class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div>
+       <label class="block text-gray-700 text-sm font-medium mb-2">
+        Località
+       </label>
+       <select class="w-full text-gray-700 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+        <option value="">
+         Qualsiasi Località
+        </option>
+        <option value="milan">
+         Milano
+        </option>
+        <option value="rome">
+         Roma
+        </option>
+        <option value="florence">
+         Firenze
+        </option>
+        <option value="venice">
+         Venezia
+        </option>
+        <option value="naples">
+         Napoli
+        </option>
+       </select>
+      </div>
+      <div>
+       <label class="block text-gray-700 text-sm font-medium mb-2">
+        Tipologia
+       </label>
+       <select class="w-full text-gray-700 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+        <option value="">
+         Qualsiasi Tipologia
+        </option>
+        <option value="apartment">
+         Appartamento
+        </option>
+        <option value="villa">
+         Villa
+        </option>
+        <option value="penthouse">
+         Penthouse
+        </option>
+        <option value="townhouse">
+         Casa a schiera
+        </option>
+        <option value="land">
+         Terreno
+        </option>
+       </select>
+      </div>
+      <div>
+       <label class="block text-gray-700 text-sm font-medium mb-2">
+        Fascia di Prezzo
+       </label>
+       <select class="w-full text-gray-700 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+        <option value="">
+         Qualsiasi Prezzo
+        </option>
+        <option value="0-200000">
+         €0 - €200,000
+        </option>
+        <option value="200000-500000">
+         €200,000 - €500,000
+        </option>
+        <option value="500000-1000000">
+         €500,000 - €1,000,000
+        </option>
+        <option value="1000000+">
+         €1,000,000+
+        </option>
+       </select>
+      </div>
+      <div>
+       <label class="block text-gray-700 text-sm font-medium mb-2">
+        Camere da letto
+       </label>
+       <select class="w-full text-gray-700 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+        <option value="">
+         Qualsiasi
+        </option>
+        <option value="1">
+         1+
+        </option>
+        <option value="2">
+         2+
+        </option>
+        <option value="3">
+         3+
+        </option>
+        <option value="4">
+         4+
+        </option>
+        <option value="5">
+         5+
+        </option>
+       </select>
+      </div>
+      <div class="md:col-span-2 lg:col-span-4">
+       <button class="w-full bg-primary hover:bg-blue-800 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.01]" type="submit">
+        <i class="fas fa-search mr-2">
+        </i>
+        Cerca Proprietà
+       </button>
+      </div>
+     </form>
+    </div>
+   </div>
+  </section>
+  <!-- Investment Calculator -->
+  <section class="py-20 bg-gray-50">
+   <div class="container mx-auto px-4">
+    <div class="flex flex-col lg:flex-row items-center">
+     <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10" data-aos="fade-right">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">
+       Calcolatore di Investimento
+      </h2>
+      <p class="text-gray-600 mb-6 text-lg">
+       Stima i potenziali rendimenti dei tuoi investimenti immobiliari con il nostro calcolatore interattivo.
+      </p>
+      <p class="text-gray-600 text-lg">
+       Modifica i parametri per vedere come diversi fattori influenzano la performance del tuo investimento nel tempo.
+      </p>
+      <div class="mt-8 bg-white p-6 rounded-xl shadow-lg" data-aos="fade-up">
+       <div class="mb-4">
+        <label class="block text-gray-700 mb-2">
+         Valore Immobile (€)
+        </label>
+        <input class="w-full mb-2" id="propertyValue" max="2000000" min="100000" step="50000" type="range" value="500000"/>
+        <div class="flex justify-between">
+         <span class="text-sm text-gray-600">
+          €100,000
+         </span>
+         <span class="text-sm text-gray-600">
+          €2,000,000
+         </span>
+        </div>
+        <div class="text-center mt-1">
+         <span class="text-lg font-bold text-primary" id="propertyValueDisplay">
+          €500,000
+         </span>
+        </div>
+       </div>
+       <div class="mb-4">
+        <label class="block text-gray-700 mb-2">
+         Acconto (%)
+        </label>
+        <input class="w-full mb-2" id="downPayment" max="50" min="10" step="5" type="range" value="20"/>
+        <div class="flex justify-between">
+         <span class="text-sm text-gray-600">
+          10%
+         </span>
+         <span class="text-sm text-gray-600">
+          50%
+         </span>
+        </div>
+        <div class="text-center mt-1">
+         <span class="text-lg font-bold text-primary" id="downPaymentDisplay">
+          20%
+         </span>
+        </div>
+       </div>
+       <div class="mb-4">
+        <label class="block text-gray-700 mb-2">
+         Durata Mutuo (anni)
+        </label>
+        <input class="w-full mb-2" id="loanTerm" max="30" min="5" step="5" type="range" value="20"/>
+        <div class="flex justify-between">
+         <span class="text-sm text-gray-600">
+          5
+         </span>
+         <span class="text-sm text-gray-600">
+          30
+         </span>
+        </div>
+        <div class="text-center mt-1">
+         <span class="text-lg font-bold text-primary" id="loanTermDisplay">
+          20 anni
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="lg:w-1/2 bg-white p-8 rounded-xl shadow-lg" data-aos="fade-left">
+      <h3 class="text-2xl font-bold mb-6 text-center text-primary">
+       Rendimenti Proiettati
+      </h3>
+      <div class="grid grid-cols-2 gap-6 mb-8">
+       <div class="bg-gray-50 p-4 rounded-lg text-center">
+        <div class="text-gray-600 mb-2">
+         Pagamento Mensile
+        </div>
+        <div class="text-2xl font-bold text-primary" id="monthlyPayment">
+         €1,850
+        </div>
+       </div>
+       <div class="bg-gray-50 p-4 rounded-lg text-center">
+        <div class="text-gray-600 mb-2">
+         Interesse Totale
+        </div>
+        <div class="text-2xl font-bold text-primary" id="totalInterest">
+         €144,000
+        </div>
+       </div>
+       <div class="bg-gray-50 p-4 rounded-lg text-center">
+        <div class="text-gray-600 mb-2">
+         Plusvalenza 5 Anni
+        </div>
+        <div class="text-2xl font-bold text-primary" id="appreciation5y">
+         €75,000
+        </div>
+       </div>
+       <div class="bg-gray-50 p-4 rounded-lg text-center">
+        <div class="text-gray-600 mb-2">
+         Plusvalenza 10 Anni
+        </div>
+        <div class="text-2xl font-bold text-primary" id="appreciation10y">
+         €180,000
+        </div>
+       </div>
+      </div>
+      <div class="bg-primary bg-opacity-10 p-6 rounded-lg border border-primary border-opacity-20">
+       <h4 class="font-bold text-primary mb-3">
+        Riepilogo Investimento
+       </h4>
+       <div class="space-y-3">
+        <div class="flex justify-between">
+         <span class="text-gray-600">
+          Investimento Iniziale
+         </span>
+         <span class="font-medium" id="initialInvestment">
+          €100,000
+         </span>
+        </div>
+        <div class="flex justify-between">
+         <span class="text-gray-600">
+          Pagamenti Totali
+         </span>
+         <span class="font-medium" id="totalPayments">
+          €444,000
+         </span>
+        </div>
+        <div class="flex justify-between">
+         <span class="text-gray-600">
+          Valore Proiettato in 10 Anni
+         </span>
+         <span class="font-medium" id="projectedValue">
+          €680,000
+         </span>
+        </div>
+        <div class="flex justify-between border-t border-gray-200 pt-3 mt-3">
+         <span class="text-gray-800 font-bold">
+          Profitto Netto
+         </span>
+         <span class="text-primary font-bold" id="netProfit">
+          €236,000
+         </span>
+        </div>
+       </div>
+      </div>
+      <button class="w-full mt-6 bg-primary hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300">
+       Parla con un Consulente Finanziario
+      </button>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Location Spotlight -->
+  <section class="py-20 bg-gray-50">
+   <div class="container mx-auto px-4">
+    <div class="text-center mb-16" data-aos="fade-up">
+     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">
+      Località Popolari
+     </h2>
+     <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      Esplora i quartieri più ricercati
+     </p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+     <div class="location-card relative rounded-xl overflow-hidden group h-64 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+      <img alt="Milano cityscape with modern buildings and skyline at sunset" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" height="256" src="https://storage.googleapis.com/a1aa/image/00843b7e-9a1d-4696-51f9-163f31e27fa8.jpg" width="400"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70">
+      </div>
+      <div class="absolute bottom-0 left-0 p-6 text-white">
+       <h3 class="text-2xl font-bold mb-2">
+        Milano
+       </h3>
+       <p class="mb-3">
+        25 Proprietà
+       </p>
+       <button class="text-white border border-white hover:bg-white hover:text-primary px-4 py-2 rounded-full text-sm transition-all duration-300">
+        Esplora
+       </button>
+      </div>
+     </div>
+     <div class="location-card relative rounded-xl overflow-hidden group h-64 cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+      <img alt="Rome Colosseum and city view with historic buildings and blue sky" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" height="256" src="https://storage.googleapis.com/a1aa/image/aaa68cea-001c-459b-9d03-983fa81cd776.jpg" width="400"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70">
+      </div>
+      <div class="absolute bottom-0 left-0 p-6 text-white">
+       <h3 class="text-2xl font-bold mb-2">
+        Roma
+       </h3>
+       <p class="mb-3">
+        18 Proprietà
+       </p>
+       <button class="text-white border border-white hover:bg-white hover:text-primary px-4 py-2 rounded-full text-sm transition-all duration-300">
+        Esplora
+       </button>
+      </div>
+     </div>
+     <div class="location-card relative rounded-xl overflow-hidden group h-64 cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+      <img alt="Florence historic center with cathedral and red rooftops under clear sky" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" height="256" src="https://storage.googleapis.com/a1aa/image/99bf6fd5-f796-48ca-dcd4-3bae564242cf.jpg" width="400"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70">
+      </div>
+      <div class="absolute bottom-0 left-0 p-6 text-white">
+       <h3 class="text-2xl font-bold mb-2">
+        Firenze
+       </h3>
+       <p class="mb-3">
+        12 Proprietà
+       </p>
+       <button class="text-white border border-white hover:bg-white hover:text-primary px-4 py-2 rounded-full text-sm transition-all duration-300">
+        Esplora
+       </button>
+      </div>
+     </div>
+     <div class="location-card relative rounded-xl overflow-hidden group h-64 cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+      <img alt="Venice canals and historic buildings with gondolas and blue sky" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" height="256" src="https://storage.googleapis.com/a1aa/image/3ceeec4b-0b53-4daf-a7c9-a523e8836b26.jpg" width="400"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70">
+      </div>
+      <div class="absolute bottom-0 left-0 p-6 text-white">
+       <h3 class="text-2xl font-bold mb-2">
+        Venezia
+       </h3>
+       <p class="mb-3">
+        9 Proprietà
+       </p>
+       <button class="text-white border border-white hover:bg-white hover:text-primary px-4 py-2 rounded-full text-sm transition-all duration-300">
+        Esplora
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Sales Process Timeline -->
+  <section class="py-20 bg-white">
+   <div class="container mx-auto px-4">
+    <div class="text-center mb-16" data-aos="fade-up">
+     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">
+      Il percorso di vendita
+     </h2>
+     <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      Un processo chiaro e trasparente dalla valutazione al rogito.
+     </p>
+    </div>
+    <div class="relative">
+     <div class="grid md:grid-cols-3 gap-10">
+      <div class="timeline-item relative" data-aos="fade-up" data-aos-delay="100">
+       <div class="flex flex-col items-center text-center">
+        <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg">
+         <i class="fas fa-search-dollar">
+         </i>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-primary">
+         Valutazione
+        </h3>
+        <p class="text-gray-600">
+         Analisi accurata del tuo immobile e definizione del prezzo di mercato.
+        </p>
+       </div>
+      </div>
+      <div class="timeline-item relative" data-aos="fade-up" data-aos-delay="200">
+       <div class="flex flex-col items-center text-center">
+        <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg">
+         <i class="fas fa-camera">
+         </i>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-primary">
+         Shooting fotografico
+        </h3>
+        <p class="text-gray-600">
+         Servizio fotografico professionale per presentare al meglio la tua casa.
+        </p>
+       </div>
+      </div>
+      <div class="timeline-item relative" data-aos="fade-up" data-aos-delay="300">
+       <div class="flex flex-col items-center text-center">
+        <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg">
+         <i class="fas fa-home">
+         </i>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-primary">
+         Visite all'immobile
+        </h3>
+        <p class="text-gray-600">
+         Organizzazione delle visite con potenziali acquirenti qualificati.
+        </p>
+       </div>
+      </div>
+      <div class="timeline-item relative" data-aos="fade-up" data-aos-delay="400">
+       <div class="flex flex-col items-center text-center">
+        <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg">
+         <i class="fas fa-handshake">
+         </i>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-primary">
+         Trattativa su misura
+        </h3>
+        <p class="text-gray-600">
+         Gestione professionale delle trattative per ottenere il miglior prezzo.
+        </p>
+       </div>
+      </div>
+      <div class="timeline-item relative" data-aos="fade-up" data-aos-delay="500">
+       <div class="flex flex-col items-center text-center">
+        <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg">
+         <i class="fas fa-file-signature">
+         </i>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-primary">
+         Verifica documentale
+        </h3>
+        <p class="text-gray-600">
+         Controllo di tutta la documentazione con tecnici e notai.
+        </p>
+       </div>
+      </div>
+      <div class="timeline-item relative" data-aos="fade-up" data-aos-delay="600">
+       <div class="flex flex-col items-center text-center">
+        <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg">
+         <i class="fas fa-gavel">
+         </i>
+        </div>
+        <h3 class="text-xl font-bold mb-2 text-primary">
+         Rogito di vendita
+        </h3>
+        <p class="text-gray-600">
+         Assistenza completa fino alla firma dell'atto notarile.
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Contact Us Section -->
+  <section class="py-20 bg-gray-50" id="contact">
+   <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">
+      Contattaci
+     </h2>
+     <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      Siamo a tua disposizione per qualsiasi domanda o richiesta di informazioni
+     </p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12">
+     <div data-aos="fade-right">
+      <div class="bg-white rounded-xl shadow-lg p-8 h-full">
+       <h3 class="text-2xl font-bold mb-6 text-primary">
+        Informazioni di contatto
+       </h3>
+       <div class="space-y-6">
+        <div class="flex items-start">
+         <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4 text-primary">
+          <i class="fas fa-map-marker-alt text-lg">
+          </i>
+         </div>
+         <div>
+          <h4 class="font-bold text-gray-800 mb-1">
+           Indirizzo
+          </h4>
+          <p class="text-gray-600">
+           Via Roma 123, 00100 Milano, Italia
+          </p>
+         </div>
+        </div>
+        <div class="flex items-start">
+         <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4 text-primary">
+          <i class="fas fa-phone-alt text-lg">
+          </i>
+         </div>
+         <div>
+          <h4 class="font-bold text-gray-800 mb-1">
+           Telefono
+          </h4>
+          <p class="text-gray-600">
+           +39 02 1234567
+          </p>
+          <p class="text-gray-600">
+           +39 333 9876543 (Mobile)
+          </p>
+         </div>
+        </div>
+        <div class="flex items-start">
+         <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4 text-primary">
+          <i class="fas fa-envelope text-lg">
+          </i>
+         </div>
+         <div>
+          <h4 class="font-bold text-gray-800 mb-1">
+           Email
+          </h4>
+          <p class="text-gray-600">
+           info@casavalore.it
+          </p>
+          <p class="text-gray-600">
+           supporto@casavalore.it
+          </p>
+         </div>
+        </div>
+        <div class="flex items-start">
+         <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4 text-primary">
+          <i class="fas fa-clock text-lg">
+          </i>
+         </div>
+         <div>
+          <h4 class="font-bold text-gray-800 mb-1">
+           Orari di apertura
+          </h4>
+          <p class="text-gray-600">
+           Lun-Ven: 9:00 - 18:00
+          </p>
+          <p class="text-gray-600">
+           Sab: 10:00 - 14:00
+          </p>
+          <p class="text-gray-600">
+           Dom: Chiuso
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="mt-8">
+        <h4 class="font-bold text-gray-800 mb-4">
+         Seguici sui social
+        </h4>
+        <div class="flex space-x-4">
+         <a class="w-10 h-10 bg-gray-100 hover:bg-primary hover:text-white rounded-full flex items-center justify-center text-gray-600 transition" href="#">
+          <i class="fab fa-facebook-f">
+          </i>
+         </a>
+         <a class="w-10 h-10 bg-gray-100 hover:bg-primary hover:text-white rounded-full flex items-center justify-center text-gray-600 transition" href="#">
+          <i class="fab fa-instagram">
+          </i>
+         </a>
+         <a class="w-10 h-10 bg-gray-100 hover:bg-primary hover:text-white rounded-full flex items-center justify-center text-gray-600 transition" href="#">
+          <i class="fab fa-linkedin-in">
+          </i>
+         </a>
+         <a class="w-10 h-10 bg-gray-100 hover:bg-primary hover:text-white rounded-full flex items-center justify-center text-gray-600 transition" href="#">
+          <i class="fab fa-youtube">
+          </i>
+         </a>
+        </div>
+        <div class="mb-8 mt-6 rounded-xl overflow-hidden shadow-lg">
+         <iframe allowfullscreen="" class="rounded-xl" height="200" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.044042736086!2d9.190351315827053!3d45.46420307910127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c6a9451d18b1%3A0x3b1e5a1b9c0d1b0d!2sPiazza%20del%20Duomo%2C%20Milano%20MI%2C%20Italia!5e0!3m2!1sit!2sus!4v1620000000000!5m2!1sit!2sus" style="border:0;" width="100%">
+         </iframe>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div data-aos="fade-left">
+      <div class="bg-white rounded-xl shadow-lg p-8">
+       <h3 class="text-2xl font-bold mb-6 text-primary">
+        Scrivici un messaggio
+       </h3>
+       <form class="space-y-4" id="contact-form">
+        <div class="grid md:grid-cols-2 gap-4">
+         <div>
+          <label class="block text-gray-700 mb-2" for="name">
+           Nome*
+          </label>
+          <input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" id="name" name="name" required="" type="text"/>
+         </div>
+         <div>
+          <label class="block text-gray-700 mb-2" for="surname">
+           Cognome*
+          </label>
+          <input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" id="surname" name="surname" required="" type="text"/>
+         </div>
+        </div>
+        <div>
+         <label class="block text-gray-700 mb-2" for="email">
+          Email*
+         </label>
+         <input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" id="email" name="email" required="" type="email"/>
+        </div>
+        <div>
+         <label class="block text-gray-700 mb-2" for="phone">
+          Telefono
+         </label>
+         <input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" id="phone" name="phone" type="tel"/>
+        </div>
+        <div>
+         <label class="block text-gray-700 mb-2" for="subject">
+          Oggetto*
+         </label>
+         <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" id="subject" name="subject" required="">
+          <option disabled="" selected="" value="">
+           Seleziona un'opzione
+          </option>
+          <option value="valuation">
+           Richiesta di valutazione
+          </option>
+          <option value="info">
+           Informazioni generali
+          </option>
+          <option value="appointment">
+           Prenotazione appuntamento
+          </option>
+          <option value="other">
+           Altro
+          </option>
+         </select>
+        </div>
+        <div>
+         <label class="block text-gray-700 mb-2" for="message">
+          Messaggio*
+         </label>
+         <textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" id="message" name="message" required="" rows="10"></textarea>
+        </div>
+        <div class="pt-2">
+         <button class="w-full bg-primary hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.01]" type="submit">
+          Invia Messaggio
+          <i class="fas fa-paper-plane ml-2">
+          </i>
+         </button>
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Form Submission Success Modal -->
+  <div class="modal fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300" id="success-modal">
+   <div class="bg-white rounded-xl max-w-md w-full transform transition-all duration-300 scale-95">
+    <div class="p-8 text-center">
+     <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-500">
+      <i class="fas fa-check text-3xl">
+      </i>
+     </div>
+     <h3 class="text-2xl font-bold text-gray-800 mb-4">
+      Messaggio inviato con successo!
+     </h3>
+     <p class="text-gray-600 mb-6">
+      Grazie per averci contattato. Ti risponderemo al più presto.
+     </p>
+     <button class="modal-close bg-primary hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-full transition-all duration-300">
+      Chiudi
+     </button>
+    </div>
+   </div>
+  </div>
+  <!-- In-Person Valuation Modal -->
+  <div class="modal fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300" id="in-person-modal">
+   <div class="bg-white rounded-xl max-w-md w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 scale-95">
+    <div class="p-6">
+     <div class="flex justify-between items-center mb-6">
+      <h3 class="text-2xl font-bold text-primary">
+       Valutazione in Presenza
+      </h3>
+      <button class="modal-close text-gray-400 hover:text-gray-600">
+       <i class="fas fa-times">
+       </i>
+      </button>
+     </div>
+     <form class="space-y-4" id="in-person-form">
+      <div>
+       <label class="block text-gray-700 mb-2" for="in-person-name">
+        Nome
+       </label>
+       <input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" id="in-person-name" required="" type="text"/>
+      </div>
+      <div>
+       <label class="block text-gray-700 mb-2" for="in-person-surname">
+        Cognome
+       </label>
+       <input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" id="in-person-surname" required="" type="text"/>
+      </div>
+      <div>
+       <label class="block text-gray-700 mb-2" for="in-person-phone">
+        Telefono
+       </label>
+       <input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" id="in-person-phone" required="" type="tel"/>
+      </div>
+      <div>
+       <label class="block text-gray-700 mb-2" for="in-person-email">
+        Email
+       </label>
+       <input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" id="in-person-email" required="" type="email"/>
+      </div>
+      <div>
+       <label class="block text-gray-700 mb-2" for="in-person-address">
+        Indirizzo Immobile
+       </label>
+       <input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" id="in-person-address" required="" type="text"/>
+      </div>
+      <div>
+       <label class="block text-gray-700 mb-2" for="in-person-notes">
+        Note (opzionale)
+       </label>
+       <textarea class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" id="in-person-notes" rows="3"></textarea>
+      </div>
+      <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-[1.02]" type="submit">
+       Invia Richiesta
+      </button>
+     </form>
+    </div>
+   </div>
+  </div>
+  <!-- Online Valuation Modal -->
+  <div class="modal fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300" id="online-modal">
+   <div class="bg-white rounded-xl max-w-md w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 scale-95">
+    <div class="p-6">
+     <div class="flex justify-between items-center mb-6">
+      <h3 class="text-2xl font-bold text-secondary">
+       Valutazione Online
+      </h3>
+      <button class="modal-close text-gray-400 hover:text-gray-600">
+       <i class="fas fa-times">
+       </i>
+      </button>
+     </div>
+     <form class="space-y-4" id="online-form">
+      <div>
+       <label class="block text-gray-700 mb-2" for="online-address">
+        Indirizzo Immobile
+       </label>
+       <input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent" id="online-address" required="" type="text"/>
+      </div>
+      <div>
+       <label class="block text-gray-700 mb-2" for="online-type">
+        Tipologia Immobile
+       </label>
+       <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent" id="online-type" required="">
+        <option value="">
+         Seleziona...
+        </option>
+        <option value="appartamento">
+         Appartamento
+        </option>
+        <option value="villa">
+         Villa
+        </option>
+        <option value="attico">
+         Attico
+        </option>
+        <option value="loft">
+         Loft
+        </option>
+        <option value="villetta">
+         Villetta a schiera
+        </option>
+       </select>
+      </div>
+      <div>
+       <label class="block text-gray-700 mb-2" for="online-area">
+        Metratura (mq)
+       </label>
+       <input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent" id="online-area" min="20" required="" type="number"/>
+      </div>
+      <div>
+       <label class="block text-gray-700 mb-2" for="online-rooms">
+        Numero Vani
+       </label>
+       <input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent" id="online-rooms" min="1" required="" type="number"/>
+      </div>
+      <div>
+       <label class="block text-gray-700 mb-2" for="online-condition">
+        Stato dell'Immobile
+       </label>
+       <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent" id="online-condition" required="">
+        <option value="">
+         Seleziona...
+        </option>
+        <option value="ottimo">
+         Ottimo
+        </option>
+        <option value="buono">
+         Buono
+        </option>
+        <option value="da ristrutturare">
+         Da ristrutturare
+        </option>
+       </select>
+      </div>
+      <div>
+       <label class="block text-gray-700 mb-2" for="online-year">
+        Anno di Costruzione
+       </label>
+       <input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent" id="online-year" max="2023" min="1900" required="" type="number"/>
+      </div>
+      <div>
+       <label class="block text-gray-700 mb-2" for="online-notes">
+        Note aggiuntive (opzionale)
+       </label>
+       <textarea class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent" id="online-notes" rows="3"></textarea>
+      </div>
+      <button class="w-full bg-secondary hover:bg-purple-800 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-[1.02]" type="submit">
+       Ottieni Stima Online
+      </button>
+     </form>
+    </div>
+   </div>
+  </div>
+  <!-- Property Detail Modal -->
+  <div class="modal fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300" id="property-modal">
+   <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 scale-95">
+    <div class="p-6">
+     <div class="flex justify-between items-center mb-6">
+      <h3 class="text-2xl font-bold text-primary" id="modal-property-title">
+      </h3>
+      <button class="modal-close text-gray-400 hover:text-gray-600">
+       <i class="fas fa-times">
+       </i>
+      </button>
+     </div>
+     <div class="grid md:grid-cols-2 gap-8">
+      <div>
+       <div class="relative rounded-xl overflow-hidden mb-4">
+        <img alt="" class="w-full h-64 object-cover" id="modal-property-image" src=""/>
+        <div class="absolute bottom-4 left-4 bg-white text-primary px-3 py-1 rounded-full text-sm font-medium" id="modal-property-price">
+        </div>
+       </div>
+       <div class="grid grid-cols-3 gap-4 mb-6">
+        <div class="bg-gray-50 p-3 rounded-lg text-center">
+         <div class="text-gray-600 text-sm">
+          Camere
+         </div>
+         <div class="text-lg font-bold text-primary" id="modal-property-beds">
+         </div>
+        </div>
+        <div class="bg-gray-50 p-3 rounded-lg text-center">
+         <div class="text-gray-600 text-sm">
+          Bagni
+         </div>
+         <div class="text-lg font-bold text-primary" id="modal-property-baths">
+         </div>
+        </div>
+        <div class="bg-gray-50 p-3 rounded-lg text-center">
+         <div class="text-gray-600 text-sm">
+          Superficie
+         </div>
+         <div class="text-lg font-bold text-primary" id="modal-property-area">
+         </div>
+        </div>
+       </div>
+       <div class="mb-6">
+        <h4 class="font-bold text-gray-800 mb-2">
+         Descrizione
+        </h4>
+        <p class="text-gray-600" id="modal-property-description">
+         Questa splendida proprietà offre ampi spazi vivibili, servizi moderni e una posizione privilegiata. La pianta aperta è perfetta per intrattenere gli ospiti, mentre le camere da letto private offrono rifugi confortevoli. La cucina è dotata di elettrodomestici di alta gamma e ampio spazio di archiviazione.
+        </p>
+       </div>
+      </div>
+      <div>
+       <div class="mb-6">
+        <h4 class="font-bold text-gray-800 mb-2">
+         Dettagli
+        </h4>
+        <div class="grid grid-cols-2 gap-4">
+         <div>
+          <div class="text-gray-600 text-sm">
+           Tipologia
+          </div>
+          <div class="font-medium" id="modal-property-type">
+           Appartamento
+          </div>
+         </div>
+         <div>
+          <div class="text-gray-600 text-sm">
+           Anno di Costruzione
+          </div>
+          <div class="font-medium" id="modal-property-year">
+           2018
+          </div>
+         </div>
+         <div>
+          <div class="text-gray-600 text-sm">
+           Parcheggio
+          </div>
+          <div class="font-medium" id="modal-property-parking">
+           2 posti
+          </div>
+         </div>
+         <div>
+          <div class="text-gray-600 text-sm">
+           Condizioni
+          </div>
+          <div class="font-medium" id="modal-property-condition">
+           Eccellenti
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="mb-6">
+        <h4 class="font-bold text-gray-800 mb-2">
+         Servizi
+        </h4>
+        <div class="flex flex-wrap gap-3">
+         <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm" id="amenity-1">
+          Piscina
+         </span>
+         <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm" id="amenity-2">
+          Palestra
+         </span>
+         <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm" id="amenity-3">
+          Sicurezza
+         </span>
+         <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm" id="amenity-4">
+          Parco
+         </span>
+        </div>
+       </div>
+       <div class="bg-primary bg-opacity-10 p-4 rounded-lg border border-primary border-opacity-20 mb-6">
+        <h4 class="font-bold text-primary mb-2">
+         Prenota una Visita
+        </h4>
+        <p class="text-gray-600 text-sm mb-3">
+         Contattaci per organizzare una visita privata di questa proprietà
+        </p>
+        <button class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300">
+         <i class="fas fa-calendar-alt mr-2">
+         </i>
+         Prenota Visita
+        </button>
+       </div>
+       <button class="w-full bg-secondary hover:bg-purple-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300">
+        <i class="fas fa-envelope mr-2">
+        </i>
+        Contatta l'Agente
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+   <div class="container mx-auto px-4">
+    <div class="text-center mb-16" data-aos="fade-up">
+     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">
+      Domande frequenti
+     </h2>
+     <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      Tutte le risposte alle domande più comuni.
+     </p>
+    </div>
+    <div class="max-w-3xl mx-auto">
+     <div class="mb-4 border border-gray-200 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+      <button class="faq-question flex justify-between items-center w-full p-6 bg-white hover:bg-gray-50 transition-colors duration-200">
+       <h3 class="text-lg font-medium text-left">
+        Quanto costa la valutazione immobiliare?
+       </h3>
+       <i class="fas fa-chevron-down text-primary transition-transform duration-300">
+       </i>
+      </button>
+      <div class="faq-answer hidden p-6 bg-gray-50">
+       <p class="text-gray-600">
+        La valutazione iniziale del tuo immobile è completamente gratuita e senza alcun impegno. Solo quando deciderai di affidarci la vendita della tua casa applicheremo una commissione, che verrà concordata in anticipo e comunicata con totale trasparenza.
+       </p>
+      </div>
+     </div>
+     <div class="mb-4 border border-gray-200 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+      <button class="faq-question flex justify-between items-center w-full p-6 bg-white hover:bg-gray-50 transition-colors duration-200">
+       <h3 class="text-lg font-medium text-left">
+        Quanto tempo ci vuole per ottenere una valutazione?
+       </h3>
+       <i class="fas fa-chevron-down text-primary transition-transform duration-300">
+       </i>
+      </button>
+      <div class="faq-answer hidden p-6 bg-gray-50">
+       <p class="text-gray-600">
+        Per la valutazione online riceverai una stima preliminare entro 24 ore dalla compilazione del questionario. Per una valutazione in presenza, il nostro esperto potrà visitare la tua casa entro 48-72 ore dalla richiesta, a seconda della tua disponibilità.
+       </p>
+      </div>
+     </div>
+     <div class="mb-4 border border-gray-200 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+      <button class="faq-question flex justify-between items-center w-full p-6 bg-white hover:bg-gray-50 transition-colors duration-200">
+       <h3 class="text-lg font-medium text-left">
+        La valutazione online è affidabile?
+       </h3>
+       <i class="fas fa-chevron-down text-primary transition-transform duration-300">
+       </i>
+      </button>
+      <div class="faq-answer hidden p-6 bg-gray-50">
+       <p class="text-gray-600">
+        La valutazione online fornisce una stima preliminare basata sui dati da te forniti e sull'analisi del mercato nella tua zona. Per una valutazione più precisa consigliamo comunque una visita in presenza del nostro esperto, che potrà considerare tutti gli aspetti non quantificabili online.
+       </p>
+      </div>
+     </div>
+     <div class="mb-4 border border-gray-200 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+      <button class="faq-question flex justify-between items-center w-full p-6 bg-white hover:bg-gray-50 transition-colors duration-200">
+       <h3 class="text-lg font-medium text-left">
+        Quali documenti servono per la valutazione?
+       </h3>
+       <i class="fas fa-chevron-down text-primary transition-transform duration-300">
+       </i>
+      </button>
+      <div class="faq-answer hidden p-6 bg-gray-50">
+       <p class="text-gray-600">
+        Per una valutazione iniziale non sono necessari documenti. Se deciderai di procedere con la vendita, ti aiuteremo a raccogliere tutta la documentazione necessaria, tra cui: planimetria catastale, visura catastale, eventuali atti di provenienza e documenti relativi a lavori effettuati.
+       </p>
+      </div>
+     </div>
+     <div class="mb-4 border border-gray-200 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+      <button class="faq-question flex justify-between items-center w-full p-6 bg-white hover:bg-gray-50 transition-colors duration-200">
+       <h3 class="text-lg font-medium text-left">
+        Quanto tempo ci vuole per vendere una casa?
+       </h3>
+       <i class="fas fa-chevron-down text-primary transition-transform duration-300">
+       </i>
+      </button>
+      <div class="faq-answer hidden p-6 bg-gray-50">
+       <p class="text-gray-600">
+        Il tempo di vendita dipende da molti fattori: posizione, prezzo, condizioni dell'immobile e andamento del mercato. In media, con una valutazione corretta e una buona presentazione, i nostri immobili vengono venduti in 2-3 mesi. Ti terremo costantemente aggiornato su tutte le visite e le offerte ricevute.
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Final CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+   <div class="container mx-auto px-4 text-center">
+    <div data-aos="fade-up">
+     <h2 class="text-3xl md:text-4xl font-bold mb-6">
+      Pronto a scoprire il valore della tua casa?
+     </h2>
+     <p class="text-xl mb-8 max-w-2xl mx-auto">
+      Richiedi una valutazione gratuita e senza impegno. Il nostro team è a tua disposizione.
+     </p>
+     <button class="bg-white hover:bg-gray-100 text-primary font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-xl" id="cta-final">
+      Richiedi Valutazione Gratuita
+      <i class="fas fa-arrow-right ml-2">
+      </i>
+     </button>
+    </div>
+   </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-12">
+   <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-8">
+     <div data-aos="fade-up" data-aos-delay="100">
+      <div class="flex items-center mb-4">
+       <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg mr-3">
+        <i class="fas fa-home">
+        </i>
+       </div>
+       <span class="text-xl font-bold text-white">
+        CasaValore
+       </span>
+      </div>
+      <p class="mb-4">
+       La tua casa racconta la tua storia, siamo qui per ascoltarla.
+      </p>
+      <div class="flex space-x-4">
+       <a class="text-gray-400 hover:text-white transition-colors duration-300" href="#">
+        <i class="fab fa-facebook-f">
+        </i>
+       </a>
+       <a class="text-gray-400 hover:text-white transition-colors duration-300" href="#">
+        <i class="fab fa-instagram">
+        </i>
+       </a>
+       <a class="text-gray-400 hover:text-white transition-colors duration-300" href="#">
+        <i class="fab fa-linkedin-in">
+        </i>
+       </a>
+      </div>
+     </div>
+     <div data-aos="fade-up" data-aos-delay="200">
+      <h3 class="text-white font-bold text-lg mb-4">
+       Servizi
+      </h3>
+      <ul class="space-y-2">
+       <li>
+        <a class="hover:text-white transition-colors duration-300" href="#">
+         Valutazione immobiliare
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-white transition-colors duration-300" href="#">
+         Vendita immobili
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-white transition-colors duration-300" href="#">
+         Home staging
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-white transition-colors duration-300" href="#">
+         Consulenza finanziaria
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div data-aos="fade-up" data-aos-delay="300">
+      <h3 class="text-white font-bold text-lg mb-4">
+       Link utili
+      </h3>
+      <ul class="space-y-2">
+       <li>
+        <a class="hover:text-white transition-colors duration-300" href="#">
+         Chi siamo
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-white transition-colors duration-300" href="#">
+         Domande frequenti
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-white transition-colors duration-300" href="#">
+         Blog
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-white transition-colors duration-300" href="#">
+         Lavora con noi
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div data-aos="fade-up" data-aos-delay="400">
+      <h3 class="text-white font-bold text-lg mb-4">
+       Contatti
+      </h3>
+      <ul class="space-y-2">
+       <li class="flex items-start">
+        <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary">
+        </i>
+        <span>
+         Via Roma 123, 00100 Milano, Italia
+        </span>
+       </li>
+       <li class="flex items-center">
+        <i class="fas fa-phone-alt mr-3 text-primary">
+        </i>
+        <span>
+         +39 02 1234567
+        </span>
+       </li>
+       <li class="flex items-center">
+        <i class="fas fa-envelope mr-3 text-primary">
+        </i>
+        <span>
+         info@casavalore.it
+        </span>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+     <div class="mb-4 md:mb-0" data-aos="fade-up" data-aos-delay="500">
+      <p>
+       © 2023 CasaValore. Tutti i diritti riservati.
+      </p>
+     </div>
+     <div class="flex space-x-6" data-aos="fade-up" data-aos-delay="600">
+      <a class="hover:text-white transition-colors duration-300" href="#">
+       Privacy Policy
+      </a>
+      <a class="hover:text-white transition-colors duration-300" href="#">
+       Cookie Policy
+      </a>
+      <a class="hover:text-white transition-colors duration-300" href="#">
+       Termini e condizioni
+      </a>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <!-- AOS (Animate On Scroll) -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  </script>
+  <script>
+   AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out',
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Navbar Scroll Effect and Top Bar Hide on Scroll
+        const navbar = document.querySelector('.navbar');
+        const topBar = document.querySelector('.top-bar');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                // Scrolling down
+                topBar.classList.add('hidden');
+            } else {
+                // Scrolling up
+                topBar.classList.remove('hidden');
+            }
+            lastScrollY = window.scrollY;
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Close mobile menu if open
+                mobileMenu.classList.remove('open');
+
+                const targetEl = document.querySelector(this.getAttribute('href'));
+                if (targetEl) {
+                    targetEl.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Modal functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const modalTriggers = document.querySelectorAll('[data-modal-target]');
+            const modals = document.querySelectorAll('.modal');
+            const closeButtons = document.querySelectorAll('.modal-close');
+
+            modalTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function () {
+                    const target = this.getAttribute('data-modal-target');
+                    const modal = document.querySelector(target);
+
+                    if (!modal) return;
+
+                    modal.classList.remove('hidden');
+                    setTimeout(() => {
+                        modal.classList.remove('opacity-0');
+                        modal.querySelector('.transform').classList.remove('scale-95');
+                    }, 10);
+                });
+            });
+
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const modal = this.closest('.modal');
+
+                    modal.classList.add('opacity-0');
+                    modal.querySelector('.transform').classList.add('scale-95');
+
+                    setTimeout(() => {
+                        modal.classList.add('hidden');
+                    }, 300);
+                });
+            });
+
+            modals.forEach(modal => {
+                modal.addEventListener('click', function (e) {
+                    if (e.target === this) {
+                        this.classList.add('opacity-0');
+                        this.querySelector('.transform').classList.add('scale-95');
+
+                        setTimeout(() => {
+                            this.classList.add('hidden');
+                        }, 300);
+                    }
+                });
+            });
+
+            // FAQ accordion functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function () {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+
+                    answer.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== question) {
+                            otherQuestion.nextElementSibling.classList.add('hidden');
+                            otherQuestion.querySelector('i').classList.remove('rotate-180');
+                        }
+                    });
+                });
+            });
+
+            // Form submission for in-person and online forms
+            const inPersonForm = document.getElementById('in-person-form');
+            const onlineForm = document.getElementById('online-form');
+            const successModal = document.getElementById('success-modal');
+
+            if (inPersonForm) {
+                inPersonForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const currentModal = this.closest('.modal');
+                    currentModal.classList.add('opacity-0');
+                    currentModal.querySelector('.transform').classList.add('scale-95');
+
+                    setTimeout(() => {
+                        currentModal.classList.add('hidden');
+
+                        successModal.classList.remove('hidden');
+                        setTimeout(() => {
+                            successModal.classList.remove('opacity-0');
+                            successModal.querySelector('.transform').classList.remove('scale-95');
+                        }, 10);
+                    }, 300);
+                });
+            }
+
+            if (onlineForm) {
+                onlineForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const currentModal = this.closest('.modal');
+                    currentModal.classList.add('opacity-0');
+                    currentModal.querySelector('.transform').classList.add('scale-95');
+
+                    setTimeout(() => {
+                        currentModal.classList.add('hidden');
+
+                        successModal.classList.remove('hidden');
+                        setTimeout(() => {
+                            successModal.classList.remove('opacity-0');
+                            successModal.querySelector('.transform').classList.remove('scale-95');
+                        }, 10);
+                    }, 300);
+                });
+            }
+
+            // Scroll to top button
+            const scrollToTopBtn = document.createElement('button');
+            scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+            scrollToTopBtn.className = 'fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center text-xl opacity-0 invisible transition-all duration-300 z-40 no-print';
+            document.body.appendChild(scrollToTopBtn);
+
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+                    scrollToTopBtn.classList.add('opacity-100', 'visible');
+                } else {
+                    scrollToTopBtn.classList.remove('opacity-100', 'visible');
+                    scrollToTopBtn.classList.add('opacity-0', 'invisible');
+                }
+            });
+
+            // Property Detail Modal functionality
+            const propertyCards = document.querySelectorAll('.property-card');
+
+            propertyCards.forEach(card => {
+                card.addEventListener('click', function () {
+                    const title = this.querySelector('h3').textContent;
+                    const price = this.querySelector('.absolute.bottom-4').textContent;
+                    const image = this.querySelector('img').src;
+                    const beds = this.querySelector('.fa-bed').parentElement.textContent.trim();
+                    const baths = this.querySelector('.fa-bath').parentElement.textContent.trim();
+                    const area = this.querySelector('.fa-ruler-combined').parentElement.textContent.trim();
+
+                    document.getElementById('modal-property-title').textContent = title;
+                    document.getElementById('modal-property-price').textContent = price;
+                    document.getElementById('modal-property-image').src = image;
+                    document.getElementById('modal-property-image').alt = title;
+                    document.getElementById('modal-property-beds').textContent = beds;
+                    document.getElementById('modal-property-baths').textContent = baths;
+                    document.getElementById('modal-property-area').textContent = area;
+
+                    const propertyModal = document.getElementById('property-modal');
+                    propertyModal.classList.remove('hidden');
+                    setTimeout(() => {
+                        propertyModal.classList.remove('opacity-0');
+                        propertyModal.querySelector('.transform').classList.remove('scale-95');
+                    }, 10);
+                });
+            });
+
+            // Investment Calculator Logic
+            const propertyValue = document.getElementById('propertyValue');
+            const downPayment = document.getElementById('downPayment');
+            const loanTerm = document.getElementById('loanTerm');
+            const propertyValueDisplay = document.getElementById('propertyValueDisplay');
+            const downPaymentDisplay = document.getElementById('downPaymentDisplay');
+            const loanTermDisplay = document.getElementById('loanTermDisplay');
+            const monthlyPayment = document.getElementById('monthlyPayment');
+            const totalInterest = document.getElementById('totalInterest');
+            const appreciation5y = document.getElementById('appreciation5y');
+            const appreciation10y = document.getElementById('appreciation10y');
+            const initialInvestment = document.getElementById('initialInvestment');
+            const totalPayments = document.getElementById('totalPayments');
+            const projectedValue = document.getElementById('projectedValue');
+            const netProfit = document.getElementById('netProfit');
+
+            function updateCalculator() {
+                const pv = parseInt(propertyValue.value);
+                const dp = parseInt(downPayment.value);
+                const lt = parseInt(loanTerm.value);
+
+                const dpAmount = pv * (dp / 100);
+                const loanAmount = pv - dpAmount;
+                const monthlyRate = 0.0033;
+                const payments = lt * 12;
+
+                const monthly = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, payments)) /
+                    (Math.pow(1 + monthlyRate, payments) - 1);
+
+                const totalInt = (monthly * payments) - loanAmount;
+
+                const app5y = pv * Math.pow(1.05, 5) - pv;
+                const app10y = pv * Math.pow(1.05, 10) - pv;
+
+                propertyValueDisplay.textContent = `€${pv.toLocaleString()}`;
+                downPaymentDisplay.textContent = `${dp}%`;
+                loanTermDisplay.textContent = `${lt} anni`;
+                monthlyPayment.textContent = `€${Math.round(monthly).toLocaleString()}`;
+                totalInterest.textContent = `€${Math.round(totalInt).toLocaleString()}`;
+                appreciation5y.textContent = `€${Math.round(app5y).toLocaleString()}`;
+                appreciation10y.textContent = `€${Math.round(app10y).toLocaleString()}`;
+                initialInvestment.textContent = `€${dpAmount.toLocaleString()}`;
+                totalPayments.textContent = `€${Math.round(monthly * payments + dpAmount).toLocaleString()}`;
+                projectedValue.textContent = `€${Math.round(pv + app10y).toLocaleString()}`;
+                netProfit.textContent = `€${Math.round((pv + app10y) - (monthly * payments + dpAmount)).toLocaleString()}`;
+            }
+
+            propertyValue.addEventListener('input', updateCalculator);
+            downPayment.addEventListener('input', updateCalculator);
+            loanTerm.addEventListener('input', updateCalculator);
+
+            updateCalculator();
+        });
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const successModal = document.getElementById('success-modal');
+            successModal.classList.remove('hidden');
+            setTimeout(() => {
+                successModal.classList.remove('opacity-0');
+                successModal.querySelector('.transform').classList.remove('scale-95');
+            }, 10);
+
+            this.reset();
+        });
+  </script>
+ </body>
+</html>
